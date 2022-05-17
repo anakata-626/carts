@@ -1,40 +1,40 @@
-[![Build Status](https://travis-ci.org/microservices-demo/carts.svg?branch=master)](https://travis-ci.org/microservices-demo/carts) [![Coverage Status](https://coveralls.io/repos/github/microservices-demo/carts/badge.svg?branch=master)](https://coveralls.io/github/microservices-demo/carts?branch=master)
-[![](https://images.microbadger.com/badges/image/weaveworksdemos/cart.svg)](http://microbadger.com/images/weaveworksdemos/cart "Get your own image badge on microbadger.com")
-# cart
-A microservices-demo service that provides shopping carts for users.
+# Getting started
 
-This build is built, tested and released by travis.
+## Welcome !
 
-# API Spec
+{% hint style="info" %}
+**Good to know:** A design system is a product, and similar best practices to product docs apply when documenting a design system. Offering succinct ways to get started is a great way to introduce the concepts of your design system, while empowering folks to use it for their needs.
+{% endhint %}
 
-Checkout the API Spec [here](http://microservices-demo.github.io/api/index?url=https://raw.githubusercontent.com/microservices-demo/carts/master/api-spec/cart.json)
+## Installing
 
-# Build
+Our design system is written in React, and can be installed into your project via NPM or Yarn.
 
-## Java
+{% tabs %}
+{% tab title="npm" %}
+`npm install --save @my-product/my-design-system`
+{% endtab %}
 
-`mvn -DskipTests package`
+{% tab title="yarn" %}
+`yarn add -S my-design-system`
+{% endtab %}
+{% endtabs %}
 
-## Docker
+## Usage
 
-`GROUP=weaveworksdemos COMMIT=test ./scripts/build.sh`
+Import the components you need:
 
-# Test
+`import {Button, ActionBar} from @my-product/my-design-system`
 
-`./test/test.sh < python testing file >`. For example: `./test/test.sh unit.py`
+Then use them in your app or components:
 
-# Run
-
-`mvn spring-boot:run`
-
-# Check
-
-`curl http://localhost:8081/health`
-
-# Use
-
-`curl http://localhost:8081`
-
-# Push
-
-`GROUP=weaveworksdemos COMMIT=test ./scripts/push.sh`
+```javascript
+const header = () => (
+    <div>
+        <ActionBar>
+            <Button kind="primary" label="Save" />
+            <Button kind="secondary" label="Cancel" />
+        </ActionBar>
+    </div>
+)
+```
